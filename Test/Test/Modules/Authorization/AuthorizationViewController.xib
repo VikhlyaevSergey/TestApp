@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationViewController" customModule="Test" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstraintWithKeyboard" destination="L0R-ej-Zr7" id="dHq-q9-IQQ"/>
+                <outlet property="bottomConstraintWithOutKeyboard" destination="4Wr-Fz-0wf" id="xMs-6k-AuB"/>
+                <outlet property="createAccountButton" destination="6FJ-ea-0f5" id="aZj-YJ-uB2"/>
+                <outlet property="emailLabel" destination="RBy-Vu-Gxz" id="oZo-ay-dSF"/>
+                <outlet property="emailTextField" destination="PQ9-Pe-cfJ" id="6OU-xW-mbS"/>
+                <outlet property="fogotPasswordButton" destination="9HG-4Y-oc0" id="5iL-dK-9jn"/>
+                <outlet property="loginButton" destination="1LF-ik-qYP" id="xT7-aN-Y1o"/>
+                <outlet property="loginButtonTopConstraint" destination="VWh-xM-sen" id="q65-n5-eHL"/>
+                <outlet property="passwordLabel" destination="r4c-5e-ZwO" id="U44-fa-acd"/>
+                <outlet property="passwordTextField" destination="uQE-7e-rd9" id="eHW-3Z-MuI"/>
+                <outlet property="view" destination="iN0-l3-epB" id="bRn-s7-Wvs"/>
+                <outlet property="viewWithForm" destination="HeA-oj-OCp" id="jBM-CJ-Aw0"/>
+                <outlet property="viewWithFormCenterVerticallyConstraint" destination="x0e-Ai-edp" id="Wyy-1C-931"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HeA-oj-OCp">
+                    <rect key="frame" x="0.0" y="274.5" width="375" height="138"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Почта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBy-Vu-Gxz">
+                            <rect key="frame" x="15" y="8" width="48" height="22"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                            <color key="textColor" red="0.47445547580000003" green="0.47454106810000002" blue="0.47445005179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-Pe-cfJ">
+                            <rect key="frame" x="15" y="34" width="345" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="GdO-1C-5Ec"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" textContentType="email"/>
+                            <connections>
+                                <action selector="someTextFieldWasChanged:" destination="-1" eventType="editingChanged" id="D6F-rJ-TRm"/>
+                            </connections>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azh-1R-661" userLabel="SeparatorView">
+                            <rect key="frame" x="15" y="57" width="345" height="1"/>
+                            <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="988-sV-dqH"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4c-5e-ZwO">
+                            <rect key="frame" x="15" y="70" width="60" height="20"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                            <color key="textColor" red="0.47445547580000003" green="0.47454106810000002" blue="0.47445005179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQE-7e-rd9">
+                            <rect key="frame" x="15" y="94" width="217" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="Aax-Ab-OSV"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                            <connections>
+                                <action selector="someTextFieldWasChanged:" destination="-1" eventType="editingChanged" id="LVG-71-btQ"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HG-4Y-oc0">
+                            <rect key="frame" x="247" y="74" width="113" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="113" id="1q8-PU-7sA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
+                            <state key="normal" title="Забыл пароль">
+                                <color key="titleColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="someButtonWasPressed:" destination="-1" eventType="touchUpInside" id="jju-kx-U5D"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHT-rz-n5Q" userLabel="SeparatorView">
+                            <rect key="frame" x="15" y="117" width="345" height="1"/>
+                            <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Wma-vU-XVl"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="PQ9-Pe-cfJ" secondAttribute="trailing" constant="15" id="1tz-pb-ahC"/>
+                        <constraint firstItem="azh-1R-661" firstAttribute="top" secondItem="PQ9-Pe-cfJ" secondAttribute="bottom" constant="4" id="3zf-UD-IWC"/>
+                        <constraint firstItem="azh-1R-661" firstAttribute="leading" secondItem="HeA-oj-OCp" secondAttribute="leading" constant="15" id="45Y-t2-LE5"/>
+                        <constraint firstItem="RBy-Vu-Gxz" firstAttribute="top" secondItem="HeA-oj-OCp" secondAttribute="top" constant="8" id="7q8-1q-d7K"/>
+                        <constraint firstItem="WHT-rz-n5Q" firstAttribute="top" secondItem="uQE-7e-rd9" secondAttribute="bottom" constant="4" id="Dx4-cD-sHd"/>
+                        <constraint firstItem="uQE-7e-rd9" firstAttribute="leading" secondItem="HeA-oj-OCp" secondAttribute="leading" constant="15" id="F9G-wZ-8Jj"/>
+                        <constraint firstItem="RBy-Vu-Gxz" firstAttribute="leading" secondItem="HeA-oj-OCp" secondAttribute="leading" constant="15" id="HOc-sm-5f4"/>
+                        <constraint firstAttribute="trailing" secondItem="azh-1R-661" secondAttribute="trailing" constant="15" id="Hlz-vM-QPz"/>
+                        <constraint firstItem="WHT-rz-n5Q" firstAttribute="leading" secondItem="HeA-oj-OCp" secondAttribute="leading" constant="15" id="ICF-0n-zdZ"/>
+                        <constraint firstAttribute="bottom" secondItem="WHT-rz-n5Q" secondAttribute="bottom" constant="20" id="K44-P2-YCG"/>
+                        <constraint firstItem="9HG-4Y-oc0" firstAttribute="leading" secondItem="uQE-7e-rd9" secondAttribute="trailing" constant="15" id="Kdv-i2-f8J"/>
+                        <constraint firstItem="uQE-7e-rd9" firstAttribute="top" secondItem="r4c-5e-ZwO" secondAttribute="bottom" constant="4" id="O9f-JI-j9u"/>
+                        <constraint firstItem="PQ9-Pe-cfJ" firstAttribute="leading" secondItem="HeA-oj-OCp" secondAttribute="leading" constant="15" id="QGQ-MX-3DO"/>
+                        <constraint firstAttribute="trailing" secondItem="9HG-4Y-oc0" secondAttribute="trailing" constant="15" id="b0e-73-Zxn"/>
+                        <constraint firstAttribute="trailing" secondItem="WHT-rz-n5Q" secondAttribute="trailing" constant="15" id="bqI-sv-lpj"/>
+                        <constraint firstItem="PQ9-Pe-cfJ" firstAttribute="top" secondItem="RBy-Vu-Gxz" secondAttribute="bottom" constant="4" id="dT0-lV-cvc"/>
+                        <constraint firstAttribute="height" constant="138" id="efY-SZ-qHU"/>
+                        <constraint firstItem="9HG-4Y-oc0" firstAttribute="top" secondItem="azh-1R-661" secondAttribute="bottom" constant="16" id="kss-sv-Up6"/>
+                        <constraint firstItem="WHT-rz-n5Q" firstAttribute="top" secondItem="9HG-4Y-oc0" secondAttribute="bottom" constant="17" id="rIm-eI-xwL"/>
+                        <constraint firstItem="r4c-5e-ZwO" firstAttribute="leading" secondItem="HeA-oj-OCp" secondAttribute="leading" constant="15" id="tZw-am-KbC"/>
+                        <constraint firstItem="r4c-5e-ZwO" firstAttribute="top" secondItem="azh-1R-661" secondAttribute="bottom" constant="12" id="vZw-FL-ED4"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FJ-ea-0f5">
+                    <rect key="frame" x="15" y="628" width="345" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="wJW-t8-gbz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                    <state key="normal" title="У меня еще нет аккаунта. Создать"/>
+                    <connections>
+                        <action selector="someButtonWasPressed:" destination="-1" eventType="touchUpInside" id="LYH-61-H0G"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LF-ik-qYP">
+                    <rect key="frame" x="114" y="563" width="147" height="44"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="147" id="5sD-IW-bV7"/>
+                        <constraint firstAttribute="height" constant="44" id="Yhn-YE-WHI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Войти">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="someButtonWasPressed:" destination="-1" eventType="touchUpInside" id="LpQ-sw-YF0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="6FJ-ea-0f5" secondAttribute="bottom" priority="750" constant="21" id="4Wr-Fz-0wf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HeA-oj-OCp" secondAttribute="trailing" id="6Kn-rc-4Uu"/>
+                <constraint firstItem="HeA-oj-OCp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="706-Yi-3zO"/>
+                <constraint firstItem="6FJ-ea-0f5" firstAttribute="top" secondItem="1LF-ik-qYP" secondAttribute="bottom" constant="21" id="DQJ-eK-0fd"/>
+                <constraint firstItem="6FJ-ea-0f5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Jl6-Sk-a1u"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="6FJ-ea-0f5" secondAttribute="bottom" priority="250" constant="21" id="L0R-ej-Zr7"/>
+                <constraint firstItem="1LF-ik-qYP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="QdG-uw-gnW"/>
+                <constraint firstItem="1LF-ik-qYP" firstAttribute="top" secondItem="HeA-oj-OCp" secondAttribute="bottom" priority="250" constant="14" id="VWh-xM-sen"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6FJ-ea-0f5" secondAttribute="trailing" constant="15" id="c5x-Gu-J6A"/>
+                <constraint firstItem="HeA-oj-OCp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="oVh-Zr-XdE"/>
+                <constraint firstItem="HeA-oj-OCp" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" priority="750" id="x0e-Ai-edp"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="55.200000000000003" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>

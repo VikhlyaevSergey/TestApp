@@ -1,0 +1,16 @@
+platform :ios, '10.0'
+use_frameworks!
+
+target 'Test' do
+
+# pod 'SDWebImage', '~> 4.0'
+# pod 'InputMask'
+
+pod 'Alamofire'
+pod 'PromiseKit', '~> 6.0'
+pod 'Alamofire-SwiftyJSON'
+
+# pod 'KeychainSwift', '~> 11.0'
+
+end
+
