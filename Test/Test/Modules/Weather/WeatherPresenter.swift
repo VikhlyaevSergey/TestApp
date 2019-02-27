@@ -22,14 +22,17 @@ class WeatherPresenter: WeatherPresentationLogic {
     var interactor: WeatherBusinessLogic?
 
     func getCurrentWeatherForCity(with id: Int) {
-        interactor?.getWeatherForCity(with: id, completion: { (success, weather, message, error) in
+        interactor?.getWeatherForCity(with: id, completion: { (success, main, message, error) in
             if success {
-                
+                guard let current = main?.temp, let min = main?.tempMin, let max = main?.tempMax else {
+                    fatalError("main is empty")
+                }
+                self.viewController?.showAllT(current: "\(Int(current))", min: "\(Int(min))", max: "\(Int(max))")
             } else {
                 if message != nil {
-
+                    self.viewController?.showInfoAlert(message!)
                 } else if error != nil {
-
+                    self.viewController?.showErrorAlert(error!)
                 } else {
                     fatalError("message & error is empty")
                 }

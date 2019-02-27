@@ -16,6 +16,7 @@ import UIKit
 //https://openweathermap.org/current   
 
 protocol WeatherDisplayLogic: BaseViewProtocol, BaseViewNavigationProtocol {
+    func showAllT(current: String, min: String, max: String)
 }
 
 class WeatherViewController: UIViewController, WeatherDisplayLogic {
@@ -29,9 +30,15 @@ class WeatherViewController: UIViewController, WeatherDisplayLogic {
         case title = "Погода"
     }
 
+    // MARK: IBs
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var currentTLabel: UILabel!
+    @IBOutlet weak var mitTLabel: UILabel!
+    @IBOutlet weak var maxTLabel: UILabel!
+
     // MARK: Params
     var presenter: WeatherPresentationLogic?
-
+    var reloadButton: UIBarButtonItem?
 
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +49,7 @@ class WeatherViewController: UIViewController, WeatherDisplayLogic {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter?.getCurrentWeatherForCity(with: tambovID)
+        activityIndicator.startAnimating()
     }
 
     override func viewDidLoad() {
@@ -61,13 +69,32 @@ class WeatherViewController: UIViewController, WeatherDisplayLogic {
 
     private func setupNavigationController() {
         self.title = Texts.title.rawValue
+        if reloadButton == nil {
+            reloadButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadT))
+        }
+        navigationItem.rightBarButtonItem = reloadButton
+    }
+
+    @objc func reloadT() {
+        activityIndicator.startAnimating()
+        presenter?.getCurrentWeatherForCity(with: tambovID)
+    }
+
+    // MARK: Logic
+    func showAllT(current: String, min: String, max: String) {
+        activityIndicator.stopAnimating()
+        currentTLabel.text = current
+        mitTLabel.text = min
+        maxTLabel.text = max
     }
 
     func showInfoAlert(_ info: String) {
-
+        activityIndicator.stopAnimating()
+        showAlert(withInfo: info)
     }
 
     func showErrorAlert(_ error: Error) {
-
+        activityIndicator.stopAnimating()
+        showAlert(withError: error)
     }
 }

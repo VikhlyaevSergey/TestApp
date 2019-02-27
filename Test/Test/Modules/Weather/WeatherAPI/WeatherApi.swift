@@ -14,7 +14,7 @@ import PromiseKit
 import UIKit
 
 class WeatherApi {
-    func getWeatherForCity(with id: Int)->Promise<DefaultResponse<WeatherResponse, WeatherError>>{
+    func getWeatherForCity(with id: Int)->Promise<WeatherResponse>{
         NetworkActivityIndicatorManager.networkOperationStarted()
         return Promise{ seal in
             NetworkActivityIndicatorManager.networkOperationFinished()
@@ -28,8 +28,8 @@ class WeatherApi {
                             do {
                                 let decoder = JSONDecoder()
                                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                                let contactsResponse = try decoder.decode(DefaultResponse<WeatherResponse, WeatherError>.self, from: data)
-                                print(contactsResponse.success)
+                                let contactsResponse = try decoder.decode(WeatherResponse.self, from: data)
+                                //print(contactsResponse.success)
                                 seal.fulfill(contactsResponse)
                             } catch {
                                 let error = NSError(domain: "Parsing error", code: -1002, userInfo: nil)

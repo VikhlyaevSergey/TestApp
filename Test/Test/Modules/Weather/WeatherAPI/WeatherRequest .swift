@@ -38,9 +38,9 @@ enum WeatherRequest: URLRequestConvertible{
         case .getWeatherForCity(let id):
             let parameters: [String: Any] = [
                 "appid": "9f5eb837bd4d6da0878535f13c201f7e",//484638
-                "lat": 52.43,
-                "lon": 41.27,
-                "mode": "json"
+                "id": id,
+                "mode": "json",
+                "units": "metric"
             ]
             return parameters
         }

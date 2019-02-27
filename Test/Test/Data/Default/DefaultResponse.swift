@@ -8,8 +8,9 @@
 
 import Foundation
 
-
+// Для корректной работы пришлось не использовать нормальную структуру запроса
 struct DefaultResponse<Response: Codable, ResponseError: Codable>: Codable {
+
     var success: Bool
     var error: Int?
     var message: String?

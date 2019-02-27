@@ -13,14 +13,15 @@
 import UIKit
 
 protocol WeatherBusinessLogic {
-    func getWeatherForCity(with id: Int, completion: @escaping (Bool, Any?, String?, Error?) -> ())
+    func getWeatherForCity(with id: Int, completion: @escaping (Bool, WeatherResponse.Main?, String?, Error?) -> ())
 }
 
 class WeatherInteractor: WeatherBusinessLogic {
-    func getWeatherForCity(with id: Int, completion: @escaping (Bool, Any?, String?, Error?) -> ()) {
+    func getWeatherForCity(with id: Int, completion: @escaping (Bool, WeatherResponse.Main?, String?, Error?) -> ()) {
         WeatherApi().getWeatherForCity(with: id).done { (response) in
-            if response.success {
-                //completion()
+            if response.main != nil {
+            //if response.success {
+                completion(true, response.main, nil, nil)
             } else {
 
             }

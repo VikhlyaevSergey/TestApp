@@ -36,7 +36,9 @@ class Validator {
 
         let specialresult = texttest2.evaluate(with: text)
 
-        return capitalresult && numberresult && specialresult
+        let moreWhan6 = text.count > 6
+
+        return capitalresult && numberresult && specialresult && moreWhan6
     }
 }
 

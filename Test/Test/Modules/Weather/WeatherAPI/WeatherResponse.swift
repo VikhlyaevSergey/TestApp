@@ -10,17 +10,15 @@ import Foundation
 
 struct WeatherResponse: Codable {
 
-    struct Coord: Codable {
-        struct Main: Codable {
-            var temp: Double = 0.0
-            var tempMin: Double = 0.0
-            var tempMax: Double = 0.0
-        }
+    struct Main: Codable {
 
-        var main: Main?
+        var temp: Double = 0.0
+        var tempMin: Double = 0.0
+        var tempMax: Double = 0.0
     }
 
-    var coord: Coord?
+    var main: Main?
 }
 
-struct WeatherError: Codable {}
+// Все хорошее, что можно было применить в АПИ, тут отсутствует
+//struct WeatherError: Codable {}

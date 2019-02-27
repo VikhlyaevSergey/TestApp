@@ -9,9 +9,18 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="Test" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="gkH-qf-Oc6" id="oxw-W5-OLh"/>
+                <outlet property="currentTLabel" destination="UQV-7e-QD8" id="Cvm-jk-4wQ"/>
+                <outlet property="maxTLabel" destination="bta-Gz-gSj" id="ZwU-Jl-xMW"/>
+                <outlet property="mitTLabel" destination="GUx-ud-97l" id="0uI-2x-3Dj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ai1-aK-0B4"/>
             </connections>
         </placeholder>
@@ -19,7 +28,72 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Температура в Тамбове (°C)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIV-pL-C7j">
+                    <rect key="frame" x="66" y="70" width="243" height="21"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущая" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-77-pc5">
+                    <rect key="frame" x="16" y="99" width="74" height="21"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минимальная" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdo-wa-lTO">
+                    <rect key="frame" x="16" y="298" width="106" height="18"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Максимальная" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzh-G4-aWT">
+                    <rect key="frame" x="16" y="324.5" width="112" height="18"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQV-7e-QD8">
+                    <rect key="frame" x="282" y="99" width="77" height="21"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUx-ud-97l">
+                    <rect key="frame" x="291" y="298" width="68" height="18"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bta-Gz-gSj">
+                    <rect key="frame" x="291" y="324.5" width="68" height="18"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gkH-qf-Oc6">
+                    <rect key="frame" x="339" y="70.5" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bta-Gz-gSj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8DD-qR-sm8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UQV-7e-QD8" secondAttribute="trailing" constant="16" id="BJE-tO-wxK"/>
+                <constraint firstItem="rzh-G4-aWT" firstAttribute="top" secondItem="Gdo-wa-lTO" secondAttribute="bottom" constant="8.5" id="DMr-LJ-71B"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GUx-ud-97l" secondAttribute="trailing" constant="16" id="GXX-xI-2QC"/>
+                <constraint firstItem="BkG-77-pc5" firstAttribute="top" secondItem="WIV-pL-C7j" secondAttribute="bottom" constant="8" id="Kom-1e-Je8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gkH-qf-Oc6" secondAttribute="trailing" constant="16" id="Lps-u0-vCD"/>
+                <constraint firstItem="Gdo-wa-lTO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="UTk-Zh-PMJ"/>
+                <constraint firstItem="UQV-7e-QD8" firstAttribute="top" secondItem="WIV-pL-C7j" secondAttribute="bottom" constant="8" id="XEU-NT-zln"/>
+                <constraint firstItem="WIV-pL-C7j" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="Xry-EE-dmI"/>
+                <constraint firstItem="BkG-77-pc5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="aWw-ig-DEe"/>
+                <constraint firstItem="rzh-G4-aWT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bjj-xf-v0y"/>
+                <constraint firstItem="bta-Gz-gSj" firstAttribute="top" secondItem="GUx-ud-97l" secondAttribute="bottom" constant="8.5" id="fZ7-Ea-i7u"/>
+                <constraint firstItem="gkH-qf-Oc6" firstAttribute="centerY" secondItem="WIV-pL-C7j" secondAttribute="centerY" id="gCg-6t-agh"/>
+                <constraint firstItem="WIV-pL-C7j" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="o1o-dD-V8C"/>
+                <constraint firstItem="rzh-G4-aWT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="pE6-JT-f5V"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bta-Gz-gSj" secondAttribute="trailing" constant="16" id="xsq-V3-Grf"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
