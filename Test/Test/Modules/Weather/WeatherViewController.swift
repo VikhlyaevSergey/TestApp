@@ -19,8 +19,10 @@ protocol WeatherDisplayLogic: BaseViewProtocol, BaseViewNavigationProtocol {
 }
 
 class WeatherViewController: UIViewController, WeatherDisplayLogic {
-    var navController: UINavigationController?
 
+    fileprivate let tambovID: Int = 484638
+
+    var navController: UINavigationController?
     static var kStoryboardID: String = String(describing: WeatherViewController.self)
 
     enum Texts: String {
@@ -35,6 +37,11 @@ class WeatherViewController: UIViewController, WeatherDisplayLogic {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationController()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.getCurrentWeatherForCity(with: tambovID)
     }
 
     override func viewDidLoad() {

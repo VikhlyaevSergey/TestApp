@@ -13,8 +13,19 @@
 import UIKit
 
 protocol WeatherBusinessLogic {
+    func getWeatherForCity(with id: Int, completion: @escaping (Bool, Any?, String?, Error?) -> ())
 }
 
 class WeatherInteractor: WeatherBusinessLogic {
-    
+    func getWeatherForCity(with id: Int, completion: @escaping (Bool, Any?, String?, Error?) -> ()) {
+        WeatherApi().getWeatherForCity(with: id).done { (response) in
+            if response.success {
+                //completion()
+            } else {
+
+            }
+            }.catch { (error) in
+                completion(false, nil, nil, error)
+        }
+    }
 }

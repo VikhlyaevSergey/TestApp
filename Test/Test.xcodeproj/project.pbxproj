@@ -34,6 +34,11 @@
 		0F35414622242FA200FF21F1 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F35414522242FA200FF21F1 /* WeatherViewController.xib */; };
 		0F354148222430D100FF21F1 /* WeatherConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F354147222430D100FF21F1 /* WeatherConfigurator.swift */; };
 		0F35414C2224396400FF21F1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0F35414B2224396400FF21F1 /* Podfile */; };
+		0F35414E2225734400FF21F1 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35414D2225734400FF21F1 /* WeatherApi.swift */; };
+		0F3541502225734F00FF21F1 /* WeatherRequest .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35414F2225734F00FF21F1 /* WeatherRequest .swift */; };
+		0F3541522225735900FF21F1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3541512225735900FF21F1 /* WeatherResponse.swift */; };
+		0F3541562225741F00FF21F1 /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3541552225741F00FF21F1 /* NetworkActivityIndicatorManager.swift */; };
+		0F3541592225748A00FF21F1 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3541582225748A00FF21F1 /* DefaultResponse.swift */; };
 		4CC543DB3A61C42543FC60F3 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E623260C4334E1249B989D /* Pods_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,11 @@
 		0F35414522242FA200FF21F1 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 		0F354147222430D100FF21F1 /* WeatherConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConfigurator.swift; sourceTree = "<group>"; };
 		0F35414B2224396400FF21F1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0F35414D2225734400FF21F1 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		0F35414F2225734F00FF21F1 /* WeatherRequest .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherRequest .swift"; sourceTree = "<group>"; };
+		0F3541512225735900FF21F1 /* WeatherResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		0F3541552225741F00FF21F1 /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		0F3541582225748A00FF21F1 /* DefaultResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
 		4DE115FAE0D88E21112F1303 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		8043E37B6992CDBF59F471FC /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		A9E623260C4334E1249B989D /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				0F34B376222323B60003336C /* Base */,
+				0F3541572225746000FF21F1 /* Default */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -177,7 +188,8 @@
 		0F34B37E222326110003336C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0F3541272223DFBE00FF21F1 /* UIViewController+Alert.swift */,
+				0F354154222573B100FF21F1 /* Extensions */,
+				0F3541532225739900FF21F1 /* CustomClasses */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,8 +233,35 @@
 		0F35414122242E5600FF21F1 /* WeatherAPI */ = {
 			isa = PBXGroup;
 			children = (
+				0F35414D2225734400FF21F1 /* WeatherApi.swift */,
+				0F35414F2225734F00FF21F1 /* WeatherRequest .swift */,
+				0F3541512225735900FF21F1 /* WeatherResponse.swift */,
 			);
 			path = WeatherAPI;
+			sourceTree = "<group>";
+		};
+		0F3541532225739900FF21F1 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0F3541552225741F00FF21F1 /* NetworkActivityIndicatorManager.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
+		0F354154222573B100FF21F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F3541272223DFBE00FF21F1 /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F3541572225746000FF21F1 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				0F3541582225748A00FF21F1 /* DefaultResponse.swift */,
+			);
+			path = Default;
 			sourceTree = "<group>";
 		};
 		2FB844F37D6A744A591EEC90 /* Pods */ = {
@@ -231,7 +270,6 @@
 				4DE115FAE0D88E21112F1303 /* Pods-Test.debug.xcconfig */,
 				8043E37B6992CDBF59F471FC /* Pods-Test.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -376,9 +414,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F35414E2225734400FF21F1 /* WeatherApi.swift in Sources */,
 				0F34B373222322900003336C /* EnterInteractor.swift in Sources */,
+				0F3541592225748A00FF21F1 /* DefaultResponse.swift in Sources */,
+				0F3541562225741F00FF21F1 /* NetworkActivityIndicatorManager.swift in Sources */,
 				0F35413F22242E4C00FF21F1 /* WeatherViewController.swift in Sources */,
 				0F34B375222323550003336C /* EnterConfigurator.swift in Sources */,
+				0F3541522225735900FF21F1 /* WeatherResponse.swift in Sources */,
 				0F34B372222322900003336C /* EnterViewController.swift in Sources */,
 				0F3541282223DFBE00FF21F1 /* UIViewController+Alert.swift in Sources */,
 				0F34B36E222322900003336C /* EnterPresenter.swift in Sources */,
@@ -389,6 +431,7 @@
 				0F34B378222323CB0003336C /* BaseProtocols.swift in Sources */,
 				0F35413B22242E4C00FF21F1 /* WeatherPresenter.swift in Sources */,
 				0F34B38B22232AF80003336C /* AuthorizationInteractor.swift in Sources */,
+				0F3541502225734F00FF21F1 /* WeatherRequest .swift in Sources */,
 				0F34B34C2223169B0003336C /* AppDelegate.swift in Sources */,
 				0F34B38622232AF80003336C /* AuthorizationPresenter.swift in Sources */,
 				0F35414022242E4C00FF21F1 /* WeatherInteractor.swift in Sources */,

@@ -165,6 +165,7 @@ extension AuthorizationViewController {
     }
 
     private func setupNavigationController() {
+        navController = navigationController
         self.title = Texts.title.rawValue
     }
 
