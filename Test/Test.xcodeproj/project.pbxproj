@@ -39,6 +39,7 @@
 		0F3541522225735900FF21F1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3541512225735900FF21F1 /* WeatherResponse.swift */; };
 		0F3541562225741F00FF21F1 /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3541552225741F00FF21F1 /* NetworkActivityIndicatorManager.swift */; };
 		0F3541592225748A00FF21F1 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3541582225748A00FF21F1 /* DefaultResponse.swift */; };
+		0F56CB862226ADC600AC6EA0 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 0F56CB852226ADC600AC6EA0 /* README */; };
 		4CC543DB3A61C42543FC60F3 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E623260C4334E1249B989D /* Pods_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		0F3541512225735900FF21F1 /* WeatherResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		0F3541552225741F00FF21F1 /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		0F3541582225748A00FF21F1 /* DefaultResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
+		0F56CB852226ADC600AC6EA0 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		4DE115FAE0D88E21112F1303 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		8043E37B6992CDBF59F471FC /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		A9E623260C4334E1249B989D /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		0F34B33F2223169B0003336C = {
 			isa = PBXGroup;
 			children = (
+				0F56CB852226ADC600AC6EA0 /* README */,
 				0F35414B2224396400FF21F1 /* Podfile */,
 				0F34B34A2223169B0003336C /* Test */,
 				0F34B3492223169B0003336C /* Products */,
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F35414C2224396400FF21F1 /* Podfile in Resources */,
+				0F56CB862226ADC600AC6EA0 /* README in Resources */,
 				0F34B38D2223300E0003336C /* AuthorizationViewController.xib in Resources */,
 				0F35412E222407FC00FF21F1 /* SFUIText-italic.otf in Resources */,
 				0F354130222407FC00FF21F1 /* SFUIText-regular.otf in Resources */,
