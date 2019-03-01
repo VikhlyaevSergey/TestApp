@@ -13,21 +13,26 @@
 import UIKit
 
 protocol AuthorizationRoutingLogic {
-    func routeTo(target: AuthorizationRouter.Targets, usingNC: UINavigationController?)
+    func routeTo(target: AuthorizationRouter.Targets)
 }
 
 class AuthorizationRouter: AuthorizationRoutingLogic  {
+
+    private var navigationController: UINavigationController?
+    init(withNavigationController: UINavigationController?) {
+        self.navigationController = withNavigationController
+    }
 
     enum Targets {
         case weather, createAccount, fogotPassword
     }
 
-    func routeTo(target: AuthorizationRouter.Targets, usingNC: UINavigationController?) {
+    func routeTo(target: AuthorizationRouter.Targets) {
         switch target {
         case .weather:
             let authVC = WeatherViewController(nibName: WeatherViewController.kStoryboardID, bundle: nil)
-            WeatherConfigurator().configure(viewController: authVC)
-            usingNC?.pushViewController(authVC, animated: true)
+            WeatherConfigurator().configure(viewController: authVC, navigationController: navigationController)
+            navigationController?.pushViewController(authVC, animated: true)
         case .createAccount:
             print("")
             // ...

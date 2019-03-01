@@ -9,7 +9,7 @@
 import UIKit
 
 class WeatherConfigurator: BaseConfiguratorProtocol {
-    func configure(viewController: UIViewController) {
+    func configure(viewController: UIViewController, navigationController: UINavigationController?) {
         let viewController = viewController as! WeatherViewController
 
         let presenter = WeatherPresenter()

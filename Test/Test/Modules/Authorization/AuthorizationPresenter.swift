@@ -106,6 +106,6 @@ class AuthorizationPresenter: AuthorizationPresentationLogic, AuthorizationDataS
     }
 
     func loginWasPressed() {
-        router?.routeTo(target: .weather, usingNC: viewController?.navController)
+        router?.routeTo(target: .weather)
     }
 }

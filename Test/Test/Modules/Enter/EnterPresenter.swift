@@ -24,6 +24,6 @@ class EnterPresenter: EnterPresentationLogic {
 
     // MARK: Routing part
     func goToAuth() {
-        router?.routeTo(target: .authorization, usingNC: viewController?.navController)
+        router?.routeTo(target: .authorization)
     }
 }

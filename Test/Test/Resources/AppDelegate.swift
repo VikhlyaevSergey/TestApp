@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = EnterViewController(nibName: EnterViewController.kStoryboardID, bundle: nil)
-        EnterConfigurator().configure(viewController: rootViewController)
         let navigationController = UINavigationController(rootViewController: rootViewController)
+        EnterConfigurator().configure(viewController: rootViewController, navigationController: navigationController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true

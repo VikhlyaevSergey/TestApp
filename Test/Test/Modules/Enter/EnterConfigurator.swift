@@ -9,13 +9,12 @@
 import UIKit
 
 final class EnterConfigurator: BaseConfiguratorProtocol {
-
-    func configure(viewController: UIViewController) {
+    func configure(viewController: UIViewController, navigationController: UINavigationController?) {
         let viewController = viewController as! EnterViewController
 
         let presenter = EnterPresenter()
         let interactor = EnterInteractor()
-        let router = EnterRouter()
+        let router = EnterRouter(withNavigationController: navigationController)
 
         presenter.interactor = interactor
         presenter.router = router

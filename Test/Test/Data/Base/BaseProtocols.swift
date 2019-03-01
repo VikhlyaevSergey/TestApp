@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BaseConfiguratorProtocol {
-    func configure(viewController: UIViewController)
+    func configure(viewController: UIViewController, navigationController: UINavigationController?)
 }
 
 protocol BaseViewNavigationProtocol {

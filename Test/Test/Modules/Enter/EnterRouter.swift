@@ -13,22 +13,27 @@
 import UIKit
 
 protocol EnterRoutingLogic {
-    func routeTo(target: EnterRouter.Targets, usingNC: UINavigationController?)
+    func routeTo(target: EnterRouter.Targets)
 }
 
 class EnterRouter: EnterRoutingLogic {
+
+    private var navigationController: UINavigationController?
+    init(withNavigationController: UINavigationController?) {
+        self.navigationController = withNavigationController
+    }
 
     enum Targets {
         case authorization
         // ...
     }
 
-    func routeTo(target: EnterRouter.Targets, usingNC: UINavigationController?) {
+    func routeTo(target: EnterRouter.Targets) {
         switch target {
         case .authorization:
             let authVC = AuthorizationViewController(nibName: AuthorizationViewController.kStoryboardID, bundle: nil)
-            AuthorizationConfigurator().configure(viewController: authVC)
-            usingNC?.pushViewController(authVC, animated: true)
+            AuthorizationConfigurator().configure(viewController: authVC, navigationController: navigationController)
+            navigationController?.pushViewController(authVC, animated: true)
         }
     }
 }
