@@ -19,7 +19,7 @@ protocol AuthorizationDisplayLogic: BaseViewNavigationProtocol, BaseViewProtocol
 
 class AuthorizationViewController: UIViewController, AuthorizationDisplayLogic {
 
-    private let kKeyboardPresentationAnimationDuration: TimeInterval = 0.34
+    private var kbDuration: TimeInterval?
 
     enum Texts: String {
         case title = "Авторизация"
@@ -176,12 +176,9 @@ extension AuthorizationViewController {
 
     @objc func keyboardWillShow(notification: Notification) {
 
-        if kbHeight == nil {
-            let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-            let keyboardFrame: NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            kbHeight = keyboardRectangle.height
-        }
+        checkKeyboardHeight(notification: notification)
+        checkKeyboardDuration(notification: notification)
+
         bottomConstraintWithKeyboard.constant = kbHeight! + 8
 
         self.viewWithFormCenterVerticallyConstraint.priority = .defaultLow
@@ -189,19 +186,41 @@ extension AuthorizationViewController {
         self.bottomConstraintWithOutKeyboard.priority = .defaultLow
         self.bottomConstraintWithKeyboard.priority = .defaultHigh
 
-        UIView.animate(withDuration: self.kKeyboardPresentationAnimationDuration) {
+        UIView.animate(withDuration: kbDuration!) {
             self.view.layoutIfNeeded()
         }
     }
 
     @objc func keyboardWillHide(notification: Notification) {
+
+        checkKeyboardHeight(notification: notification)
+        checkKeyboardDuration(notification: notification)
+
         self.viewWithFormCenterVerticallyConstraint.priority = .defaultHigh
         self.loginButtonTopConstraint.priority = .defaultLow
         self.bottomConstraintWithOutKeyboard.priority = .defaultHigh
         self.bottomConstraintWithKeyboard.priority = .defaultLow
 
-        UIView.animate(withDuration: self.kKeyboardPresentationAnimationDuration) {
+        UIView.animate(withDuration: kbDuration!) {
             self.view.layoutIfNeeded()
+        }
+    }
+
+    private func checkKeyboardHeight(notification: Notification) {
+        if kbHeight == nil {
+            let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+            let keyboardFrame: NSValue = userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            kbHeight = keyboardRectangle.height
+        }
+
+    }
+
+    private func checkKeyboardDuration(notification: Notification) {
+        if kbDuration == nil {
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        kbDuration = userInfo.value(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as? TimeInterval
+        //let curve = aNotification.userInfo.objectForKey(UIKeyboardAnimationCurveUserInfoKey) as NSNumber
         }
     }
 
