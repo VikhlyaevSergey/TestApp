@@ -218,9 +218,9 @@ extension AuthorizationViewController {
 
     private func checkKeyboardDuration(notification: Notification) {
         if kbDuration == nil {
-        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        kbDuration = userInfo.value(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as? TimeInterval
-        //let curve = aNotification.userInfo.objectForKey(UIKeyboardAnimationCurveUserInfoKey) as NSNumber
+            let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+            kbDuration = userInfo.value(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as? TimeInterval
+            //let curve = aNotification.userInfo.objectForKey(UIKeyboardAnimationCurveUserInfoKey) as NSNumber
         }
     }
 
